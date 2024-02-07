@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { checkOtp } from '../../services/auth'
 import { setCookie } from '../../utils/cookie'
+import { useNavigate } from 'react-router-dom'
 
 type PROPS = {
   code : string
@@ -10,6 +11,7 @@ type PROPS = {
 }
 
 const CheckOtp = (props : PROPS) => {
+  const navigater = useNavigate()
   const {code, mobile, setCode, setStep} = props
   
   const submitHandler = async (e : React.FormEvent<HTMLFormElement>) => {
@@ -17,7 +19,10 @@ const CheckOtp = (props : PROPS) => {
     const {err, res} = await checkOtp(code, mobile)
     
     if (res?.status === 200) {
-      setCookie(res.data)  
+      setCookie(res.data)
+      console.log(res);
+      
+      navigater('/dashboard')  
     }
 
     if (err) console.log(err);
