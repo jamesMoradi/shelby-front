@@ -1,11 +1,11 @@
-import React from 'react'
-import Auth from './pages/AuthPage'
+import { BrowserRouter } from 'react-router-dom'
+import Router from './router/Router'
 
 const App = () => {
-  console.log(process.env.REACT_APP_BASE_URL);
-  
   return (
-    <Auth />
+    <BrowserRouter>
+      <Router />      
+    </BrowserRouter>
   )
 }
 
