@@ -2,6 +2,8 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { checkOtp } from '../../services/auth'
 import { setCookie } from '../../utils/cookie'
 import { useNavigate } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import { useQueryForProfileOptions } from '../../configs/reactQueryConfigs'
 
 type PROPS = {
   code : string
@@ -12,6 +14,8 @@ type PROPS = {
 
 const CheckOtp = (props : PROPS) => {
   const navigater = useNavigate()
+
+  const { refetch } = useQuery(useQueryForProfileOptions)
   const {code, mobile, setCode, setStep} = props
   
   const submitHandler = async (e : React.FormEvent<HTMLFormElement>) => {
@@ -20,9 +24,8 @@ const CheckOtp = (props : PROPS) => {
     
     if (res?.status === 200) {
       setCookie(res.data)
-      console.log(res);
-      
-      navigater('/dashboard')  
+      navigater('/dashboard')
+      refetch()  
     }
 
     if (err) console.log(err);
