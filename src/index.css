@@ -13,3 +13,39 @@ margin: 0;
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/*fonts*/
+@font-face {
+  font-family: bennyBlaco;
+  src: url(./assets//FontsFree-Net-BENNB___.ttf);
+}
+
+/*custom classes*/
+.bg-image {
+  background: url(./assets/bg.png);
+  background-size: contain;
+  /* background-position: center; */
+}
+
+.neon {
+  font-family: bennyBlaco;
+  color: #ffffff8b;
+  text-align: center;
+  text-shadow: 0 0 0 #ffffff8b, 0 0 0 #ffffff8b, 0 0 0 #ffffff8b, 0 0 0 #ffffff8b, 0 0 5px #ffffff8b, 0 0 10px #ffffff8b, 0 0 15px #ffffff8b;
+}
+
+.custom-font {
+  font-family: bennyBlaco;
+}
+
+.neon-shadow {
+  border-radius: 5px;
+  outline: none;
+  border:2px solid #ffffff8b;
+  /* box-shadow: 0 0 5px #ffffff8b, 0 0 10px #ffffff8b, 0 0 15px #ffffff8b, 0 0 20px #ffffff8b, 0 0 25px #ffffff8b, 0 0 30px #ffffff8b, 0 0 35px #ffffff8b; */
+  box-shadow: inset 0 0 0 #ffffff8b, 0 0 0px #ffffff8b, 0 0 5px #ffffff8b, 0 0 0px #ffffff8b, 0 0 5px #ffffff8b, 0 0 10px #ffffff8b, 0 0 15px #ffffff8b;
+}
+
+.gray-logo {
+  filter: grayscale(50%);
+}

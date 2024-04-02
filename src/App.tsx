@@ -1,19 +1,18 @@
-import { BrowserRouter } from 'react-router-dom'
-import Router from './router/Router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { defaultOptions } from './configs/reactQueryConfigs'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import Main from './layouts/Main'
+import Dashboard from './pages/Dashboard'
+import Welcome from './pages/Welcome'
 
 const App = () => {
-  const queryClient = new QueryClient({defaultOptions})
-
   return (
-    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Router />      
+      <Routes>
+        <Route index element={<Welcome />}/>
+        <Route path='/admin' element={<Dashboard />}/>
+        <Route path='/caffe-menu' element={<Main />}/>
+      </Routes>
       </BrowserRouter>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
   )
 }
 
