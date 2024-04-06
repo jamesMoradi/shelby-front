@@ -10,20 +10,30 @@ const Auth = ({setData, setIsAuthed, data} : {
   
         
     const onSubmitHandler = () => {
-        if (data.username === '' && data.password === '') {
+        if (data.username === 'arsham' && data.password === '123456789') {
             setIsAuthed(prev => !prev)
         }
     }
 
+
+    const onchangeHandler = (e : React.ChangeEvent<HTMLInputElement>) => {
+        setData(prev => {
+            return {
+                ...prev,
+                [e.target.name] : e.target.value
+            }
+        })
+    }
+
     return (
-        <div>
+        <div className='flex flex-col items-center justify-center h-screen gap-4'>
             <div>
-                <input type="text" name='username'/>
+                <input onChange={e => onchangeHandler(e)} placeholder='username' className='custom-input' value={data.username} type="text" name='username'/>
             </div>
             <div>
-                <input type="password" name='password'/>
+                <input onChange={e => onchangeHandler(e)} placeholder='password' className='custom-input' value={data.password} type="password" name='password'/>
             </div>
-            <div onClick={onSubmitHandler}>submit</div>
+            <div onClick={onSubmitHandler} className='green-btn'>ورود</div>
         </div>
     )
 }

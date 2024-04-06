@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Auth from './Auth'
+import Panel from './Panel'
 
 export interface Data {
     username : string
@@ -17,7 +18,7 @@ const Dashboard = () => {
   return (
     <section>
         {isAuthed ? 
-        <div>dashboard</div> : 
+        <Panel /> : 
         <Auth setData={setUserData} setIsAuthed={setIsAuthed}  data={userData}/>
         }
     </section>
