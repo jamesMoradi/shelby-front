@@ -36,7 +36,7 @@ const Welcome = () => {
                 <Link className='capitalize' to={'/caffe-menu'}>cafee <br/> menu</Link>
             </div>
             <div className='neon-shadow w-40 p-2 outline-none'>
-                <Link className='capitalize' to={'/caffe-menu'}>breakfast <br/> menu</Link>
+                <Link className='capitalize' to={'/breakfast'}>breakfast <br/> menu</Link>
             </div>
             </div>
            

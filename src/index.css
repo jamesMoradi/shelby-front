@@ -80,3 +80,12 @@ input[type=number] {
   background: rgb(21 128 61);
   border-radius: 6px;
 }
+
+.custom-h1 {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #fff;
+  margin-bottom: .5rem;
+}

@@ -81,6 +81,7 @@ const CreateItem = () => {
           name="category" 
           className='block w-52 text-right custom-input' 
           onChange={e => onchangeHandler(e)}>
+            <option>کتگوری</option>
             <option value="espresso">اسپرسو</option>
             <option value="cold-bar">بار سرد</option>
             <option value="hot-bar">بار گرم</option>

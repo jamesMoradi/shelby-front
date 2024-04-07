@@ -17,3 +17,15 @@ export const updateData = async (data : PatchData) => {
 
     return res.data
 }
+
+export const deleteData = async (name : string) => {
+    const res = await api.delete(`/orders/${name}`)
+
+    return res
+}
+
+export const getData = async () => {
+    const res = await api.get('/orders')
+
+    return res.data
+}
